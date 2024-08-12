@@ -7,6 +7,5 @@ interface Props {
 }
 
 export function Scope({ scope }: Props) {
-  console.log(scope);
   return <>{createElement(scope.Client)}</>;
 }

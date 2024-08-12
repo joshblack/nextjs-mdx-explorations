@@ -15,8 +15,9 @@ export default async function PostPage({ params }: Props) {
     throw new Error("Post not found");
   }
   const relativePath = path.relative(POSTS_DIR, filepath);
-  const { default: MDXContent } = await import(
+  const { default: MDXContent, frontmatter } = await import(
     `../../../posts/${relativePath}`
   );
+  // console.log(frontmatter);
   return <MDXContent />;
 }
